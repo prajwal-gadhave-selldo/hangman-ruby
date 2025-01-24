@@ -1,5 +1,5 @@
 class Hangman
-    WINNING_ANIMATIONS = hangman_graphics = [
+    WINNING_ANIMATIONS = [
         '''
          ------
          |    |
