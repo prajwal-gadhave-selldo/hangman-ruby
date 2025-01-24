@@ -1,4 +1,78 @@
 class Hangman
+    WINNING_ANIMATIONS = hangman_graphics = [
+        '''
+         ------
+         |    |
+              |
+              |
+              |
+              |
+              |
+        --------
+        ''',  # 0 wrong guesses
+        '''
+         ------
+         |    |
+         O    |
+              |
+              |
+              |
+              |
+        --------
+        ''',  # 1 wrong guess
+        '''
+         ------
+         |    |
+         O    |
+         |    |
+              |
+              |
+              |
+        --------
+        ''',  # 2 wrong guesses
+        '''
+         ------
+         |    |
+         O    |
+        /|    |
+              |
+              |
+              |
+        --------
+        ''',  # 3 wrong guesses
+        '''
+         ------
+         |    |
+         O    |
+        /|\\   |
+              |
+              |
+              |
+        --------
+        ''',  # 4 wrong guesses
+        '''
+         ------
+         |    |
+         O    |
+        /|\\   |
+        /     |
+              |
+              |
+        --------
+        ''',  # 5 wrong guesses
+        '''
+         ------
+         |    |
+         O    |
+        /|\\   |
+        / \\   |
+              |
+              |
+        --------
+        '''   # 6 wrong guesses
+    ]
+    
+    
     def initialize
         @word = "People".downcase    
         @attempt = 0
@@ -46,6 +120,7 @@ class Hangman
             puts "Correct guess!"
         else
             @attempt += 1
+            puts WINNING_ANIMATIONS[@attempt - 1]
             puts "Incorrect guess! You have #{@max_attempts - @attempt} left"
         end
     end
